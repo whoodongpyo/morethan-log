@@ -2,7 +2,6 @@ import { CONFIG } from "site.config"
 import React from "react"
 import { AiFillCodeSandboxCircle } from "react-icons/ai"
 import styled from "@emotion/styled"
-import { Emoji } from "src/components/Emoji"
 
 const ServiceCard: React.FC = () => {
   // site.config.js 의 projects 에 내용이 없을 경우 영역을 가린다.
@@ -13,17 +12,20 @@ const ServiceCard: React.FC = () => {
         🌟 Project
       </StyledTitle>
       <StyledWrapper>
-        {CONFIG.projects.map((project, idx) => (
-          <a
-            key={idx}
-            href={`${project.href}`}
-            rel="noreferrer"
-            target="_blank"
-          >
-            <AiFillCodeSandboxCircle className="icon" />
-            <div className="name">{CONFIG.projects[0].name}</div>
-          </a>
-        ))}
+        {CONFIG.projects.map(({ href }, idx) => {
+          const { name } = CONFIG.projects[0];
+          return (
+            <a
+              key={idx}
+              href={`${href}`}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <AiFillCodeSandboxCircle className="icon" />
+              <div className="name">{name}</div>
+            </a>
+          )
+        })}
       </StyledWrapper>
     </>
   )
