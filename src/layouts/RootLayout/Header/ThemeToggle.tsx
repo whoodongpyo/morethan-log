@@ -14,7 +14,9 @@ const ThemeToggle: React.FC<Props> = () => {
 
   return (
     <StyledWrapper onClick={handleClick}>
-      <Emoji>{scheme === "light" ? "☀️" : "🌙"}</Emoji>
+      {/* Safari 브라우저에서 <Emoji> 가 보이지 않음. */}
+      <span>{scheme === "light" ? "☀️" : "🌙"}</span>
+      {/*<Emoji>{scheme === "light" ? "☀️" : "🌙"}</Emoji>*/}
     </StyledWrapper>
   )
 }

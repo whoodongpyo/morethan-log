@@ -5,11 +5,12 @@ import styled from "@emotion/styled"
 import { Emoji } from "src/components/Emoji"
 
 const ServiceCard: React.FC = () => {
-  if (!CONFIG.projects) return null
+  // site.config.js 의 projects 에 내용이 없을 경우 영역을 가린다.
+  if (!CONFIG.projects || CONFIG.projects.length === 0) return null
   return (
     <>
       <StyledTitle>
-        <Emoji>🌟</Emoji> Service
+        🌟 Project
       </StyledTitle>
       <StyledWrapper>
         {CONFIG.projects.map((project, idx) => (

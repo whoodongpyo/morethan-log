@@ -10,7 +10,9 @@ const ProfileCard: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <div className="title">
-        <Emoji>💻</Emoji> Profile
+        {/* Safari 브라우저에서 <Emoji> 태그가 보이지 않음. */}
+        {/*<Emoji>💻</Emoji> Profile*/}
+        💻 Profile
       </div>
       <div className="content">
         <div className="top">
@@ -31,7 +33,8 @@ export default ProfileCard
 const StyledWrapper = styled.div`
   > .title {
     padding: 0.25rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
   }
   > .content {
     margin-bottom: 2.25rem;

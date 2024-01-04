@@ -12,4 +12,6 @@ const Logo = () => {
 
 export default Logo
 
-const StyledWrapper = styled(Link)``
+const StyledWrapper = styled(Link)`
+  font-weight: 700; /* 블로그 제목 : 폰트 굵게 */
+`

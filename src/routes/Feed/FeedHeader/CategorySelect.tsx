@@ -26,7 +26,9 @@ const CategorySelect: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <div ref={dropdownRef} className="wrapper" onClick={handleOpen}>
-        {currentCategory} Posts <MdExpandMore />
+        {/* 선택한 카테고리의 포스트 갯수도 표시한다. */}
+        {currentCategory} Posts ({ data[currentCategory] })
+        <MdExpandMore />
       </div>
       {opened && (
         <div className="content">

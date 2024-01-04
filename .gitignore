@@ -37,3 +37,7 @@ yarn-error.log*
 # public/sitemap.xml
 
 /.firebase
+
+# IntelliJ IDEA & VSCode
+.idea
+.vscode

@@ -35,7 +35,9 @@ const TagList: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <div className="top">
-        <Emoji>🏷️</Emoji> Tags
+        {/* Safari 브라우저에서 <Emoji> 태그가 보이지 않음. */}
+        {/*<Emoji>🏷️</Emoji> Tags*/}
+        🏷️ Tags
       </div>
       <div className="list">
         {Object.keys(data).map((key) => (
@@ -44,7 +46,7 @@ const TagList: React.FC<Props> = () => {
             data-active={key === currentTag}
             onClick={() => handleClickTag(key)}
           >
-            {key}
+            {key} ({data[key]})
           </a>
         ))}
       </div>
@@ -58,11 +60,13 @@ const StyledWrapper = styled.div`
   .top {
     display: none;
     padding: 0.25rem;
-    margin-bottom: 0.75rem;
+    /* margin-bottom: 0.75rem; */
 
     @media (min-width: 1024px) {
       display: block;
     }
+    
+    font-weight: 700;
   }
 
   .list {
